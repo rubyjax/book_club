@@ -12,5 +12,6 @@ class Duck
   end
 
   def display
+    raise "Not Implemented"
   end
 end
