@@ -1,17 +1,7 @@
-class CurrentConditions
-  attr_accessor :temp, :humidity, :pressure, :measurements
+require 'displays'
 
-  def initialize(temp, humidity, pressure)
-    @temp = temp
-    @humidity = humidity
-    @pressure = pressure
-  end
-  
-  def show
-    @measurements = { 
-      temp: @temp        , 
-      humidity: @humidity, 
-      pressure: @pressure, 
-    }
+class CurrentConditions < Displays
+  def sum
+    @temperature + @humidity + @pressure
   end
 end

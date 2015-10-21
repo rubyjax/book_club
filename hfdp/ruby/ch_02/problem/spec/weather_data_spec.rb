@@ -1,19 +1,12 @@
 require_relative '../spec_helper'
 
-RSpec.describe CurrentConditions do
-  let(:current_conditions) { described_class.new(temp, humidity, pressure) }
-  let(:temp) { 1.2 }
-  let(:humidity) { 2.3 }
-  let(:pressure) { 3.4 }
-  let(:measurements) do
-    { temp: temp, humidity: humidity, pressure: pressure }
+RSpec.describe WeatherData do
+  before(:context) do
+    @weather_data = described_class.new
+    @weather_data.measurements_changed
   end
 
-  it { expect(current_conditions.show).to eq(measurements) }
-end
-
-RSpec.describe Statistics do
-end
-
-RSpec.describe Forecast do
+  it { expect(@weather_data.forecast.display).to_not be(nil) }
+  it { expect(@weather_data.statistics.display).to_not be(nil) }
+  it { expect(@weather_data.current_conditions.display).to_not be(nil) }
 end
