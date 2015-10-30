@@ -12,4 +12,10 @@ module Subject
   def remove_observer(*observers)
    observers.each { |observer| @observers.delete(observer) }
   end
+
+  private
+
+  def notify_observers
+    observers.each { |observer| observer.update(self) }
+  end
 end
