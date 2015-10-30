@@ -1,4 +1,4 @@
-#Chapter 2 - Observer Patter
+#Chapter 2 - Observer Pattern
 
 We've been given instructions to create a weather object that updates three
 initial displays, but the weather object should be able to handle other displays
